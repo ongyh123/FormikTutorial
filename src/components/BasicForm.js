@@ -1,8 +1,13 @@
 import { useFormik } from 'formik';
 import { basicSchema } from '../schemas';
 
-const onSubmit = () => {
+const onSubmit = async (values,actions) => {
+  console.log(values);
+  console.log(actions);
   console.log('sibmitted');
+
+  await new Promise ((resolve) => setTimeout(resolve, 1000));
+  actions.resetForm()
 };
 
 const BasicForm = () => {
