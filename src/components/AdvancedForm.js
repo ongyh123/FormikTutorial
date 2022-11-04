@@ -18,7 +18,7 @@ const AdvancedForm = () => {
       validationSchema={advancedSchema}
       onSubmit={onSubmit}
     >
-      {(props) => (
+      {({isSubmitting}) => (
         <Form>
           <CustomInput
             label='Username'
@@ -38,7 +38,7 @@ const AdvancedForm = () => {
             <option value='other'>Other</option>
           </CustomSelect>
           <CustomCheckbox name='acceptedTos' type='checkbox' />
-          <button type='submit'>Submit</button>
+          <button disabled={isSubmitting} type='submit'>Submit</button>
         </Form>
       )}
     </Formik>
