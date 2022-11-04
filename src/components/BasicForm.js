@@ -29,6 +29,7 @@ const BasicForm = () => {
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
+        className={errors.email ? "input-error" : ""}
       />
       <label htmlFor='email'>Age</label>
       <input
@@ -38,6 +39,7 @@ const BasicForm = () => {
         value={values.age}
         onChange={handleChange}
         onBlur={handleBlur}
+        className={errors.age ? "input-error" : ""}
       />
       <label htmlFor='email'>Password</label>
       <input
@@ -47,6 +49,7 @@ const BasicForm = () => {
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
+        className={errors.password ? "input-error" : ""}
       />
       <label htmlFor='email'>Confirm Password</label>
       <input
@@ -56,6 +59,7 @@ const BasicForm = () => {
         value={values.confirmPassword}
         onChange={handleChange}
         onBlur={handleBlur}
+        className={errors.confirmPassword ? "input-error" : ""}
       />
       <button type='submit'>Submit</button>
     </form>
