@@ -1,11 +1,12 @@
 // Formik Component Example
 
 import { Field, Form, Formik } from 'formik';
+import { advancedSchema } from '../schemas';
 import CustomInput from './CustomInput';
 
 const AdvancedForm = () => {
   return (
-    <Formik initialValues={{ username: 'jared' }}>
+    <Formik initialValues={{ username: 'jared' }} validationSchema={advancedSchema}>
       {(props) => (
         <Form>
           <CustomInput 
