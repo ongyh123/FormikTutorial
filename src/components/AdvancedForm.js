@@ -3,11 +3,12 @@
 import { Field, Form, Formik } from 'formik';
 import { advancedSchema } from '../schemas';
 import CustomInput from './CustomInput';
+import CustomSelect from './CustomSelect';
 
 const AdvancedForm = () => {
   return (
     <Formik
-      initialValues={{ username: '', jobType:'', acceptedTos:false }}
+      initialValues={{ username: '', jobType: '', acceptedTos: false }}
       validationSchema={advancedSchema}
     >
       {(props) => (
@@ -18,6 +19,13 @@ const AdvancedForm = () => {
             type='text'
             placeholder='Enter your username'
           />
+          <CustomSelect
+            label='Job Type'
+            name='jobType'
+            placeholder='Please select a job'
+          >
+            
+          </CustomSelect>
 
           <button type='submit'>Submit</button>
         </Form>
