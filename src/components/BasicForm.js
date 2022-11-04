@@ -31,6 +31,7 @@ const BasicForm = () => {
         onBlur={handleBlur}
         className={errors.email && touched.email? "input-error" : ""} // if they click out of the field, and there is an error, display the error
       />
+      {(errors.email && touched.email) && (<p className="error">{errors.email}</p>)}
       <label htmlFor='email'>Age</label>
       <input
         id='age'
@@ -41,6 +42,7 @@ const BasicForm = () => {
         onBlur={handleBlur}
         className={errors.age && touched.age ? "input-error" : ""}
       />
+      {(errors.age && touched.age) && (<p className="error">{errors.age}</p>)}
       <label htmlFor='email'>Password</label>
       <input
         id='password'
@@ -51,6 +53,7 @@ const BasicForm = () => {
         onBlur={handleBlur}
         className={errors.password && touched.password ? "input-error" : ""}
       />
+      {(errors.password && touched.password) && (<p className="error">{errors.password}</p>)}
       <label htmlFor='email'>Confirm Password</label>
       <input
         id='confirmPassword'
@@ -61,6 +64,7 @@ const BasicForm = () => {
         onBlur={handleBlur}
         className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
       />
+      {(errors.confirmPassword && touched.confirmPassword) && (<p className="error">{errors.confirmPassword}</p>)}
       <button type='submit'>Submit</button>
     </form>
   );
