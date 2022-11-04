@@ -24,7 +24,11 @@ const AdvancedForm = () => {
             name='jobType'
             placeholder='Please select a job'
           >
-            
+            <option value=''>Please select a job type</option>
+            <option value='developer'>Developer</option>
+            <option value='designer'>Designer</option>
+            <option value='manager'>Product Manager</option>
+            <option value='other'>Other</option>
           </CustomSelect>
 
           <button type='submit'>Submit</button>
