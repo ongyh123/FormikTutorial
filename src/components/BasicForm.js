@@ -11,7 +11,7 @@ const onSubmit = async (values,actions) => {
 };
 
 const BasicForm = () => {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+  const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         email: '',
@@ -77,7 +77,9 @@ const BasicForm = () => {
       {errors.confirmPassword && touched.confirmPassword && (
         <p className='error'>{errors.confirmPassword}</p>
       )}
-      <button type='submit'>Submit</button>
+      
+      {/* button is disabled, when isSubmiting is true */}
+      <button disabled={isSubmitting} type='submit'>Submit</button> 
     </form>
   );
 };
