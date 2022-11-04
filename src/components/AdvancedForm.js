@@ -7,7 +7,7 @@ import CustomInput from './CustomInput';
 const AdvancedForm = () => {
   return (
     <Formik
-      initialValues={{ username: 'jared' }}
+      initialValues={{ username: '', jobType:'', acceptedTos:false }}
       validationSchema={advancedSchema}
     >
       {(props) => (
