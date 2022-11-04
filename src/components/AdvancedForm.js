@@ -6,16 +6,19 @@ import CustomInput from './CustomInput';
 
 const AdvancedForm = () => {
   return (
-    <Formik initialValues={{ username: 'jared' }} validationSchema={advancedSchema}>
+    <Formik
+      initialValues={{ username: 'jared' }}
+      validationSchema={advancedSchema}
+    >
       {(props) => (
         <Form>
-          <CustomInput 
-           label="Username"
-           name="username"
-           type="text"
-           placeholder="Enter your username"
-           />
-          
+          <CustomInput
+            label='Username'
+            name='username'
+            type='text'
+            placeholder='Enter your username'
+          />
+
           <button type='submit'>Submit</button>
         </Form>
       )}
