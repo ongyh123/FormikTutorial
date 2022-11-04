@@ -14,6 +14,6 @@ export const basicSchema = yup.object().shape({
     .required('Required'),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref('password'), null,"Passwords Must Match"])
+    .oneOf([yup.ref('password'), null],"Passwords Must Match")
     .required('Required'),
 });
