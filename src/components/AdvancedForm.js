@@ -7,10 +7,16 @@ import CustomInput from './CustomInput';
 import CustomSelect from './CustomSelect';
 
 const AdvancedForm = () => {
+  const onSubmit = async (values, actions) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+
   return (
     <Formik
       initialValues={{ username: '', jobType: '', acceptedTos: false }}
       validationSchema={advancedSchema}
+      onSubmit={onSubmit}
     >
       {(props) => (
         <Form>
