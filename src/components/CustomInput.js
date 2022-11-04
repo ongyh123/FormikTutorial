@@ -14,6 +14,7 @@ const CustomInput = ({ label, ...props }) => {
         {...props}
         className={meta.touched && meta.error ? 'input-error' : ''}
       />
+      {meta.touched && meta.error && <div className="error">{meta.error}</div>}
     </>
   );
 };
