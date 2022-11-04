@@ -6,7 +6,7 @@ const onSubmit = () => {
 };
 
 const BasicForm = () => {
-  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: '',
       age: '',
@@ -29,7 +29,7 @@ const BasicForm = () => {
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.email ? "input-error" : ""}
+        className={errors.email && touched.email? "input-error" : ""} // if they click out of the field, and there is an error, display the error
       />
       <label htmlFor='email'>Age</label>
       <input
@@ -39,7 +39,7 @@ const BasicForm = () => {
         value={values.age}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.age ? "input-error" : ""}
+        className={errors.age && touched.age ? "input-error" : ""}
       />
       <label htmlFor='email'>Password</label>
       <input
@@ -49,7 +49,7 @@ const BasicForm = () => {
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.password ? "input-error" : ""}
+        className={errors.password && touched.password ? "input-error" : ""}
       />
       <label htmlFor='email'>Confirm Password</label>
       <input
@@ -59,7 +59,7 @@ const BasicForm = () => {
         value={values.confirmPassword}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={errors.confirmPassword ? "input-error" : ""}
+        className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
       />
       <button type='submit'>Submit</button>
     </form>
